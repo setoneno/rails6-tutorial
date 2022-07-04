@@ -60,4 +60,12 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.hosts.clear
+  
+  config.action_mailer.raise_delivery_errors = false
+
+  host = 'd04947e93adf47fd993399c41bdd31d6.vfs.cloud9.ap-northeast-1.amazonaws.com'
+  # クラウドIDEの場合は以下をお使いください
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  # localhostで開発している場合は以下をお使いください
+  # config.action_mailer.default_url_options = { host: host, protocol: 'http' }
 end
